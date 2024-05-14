@@ -12,11 +12,11 @@ exports.up = async (knex) => {
   const tableExists = await knex.schema.hasTable(tableName);
 
   if (!tableExists) {
-    console.log(`Creating ${tableName}`);
     return knex.schema.createTable(tableName, (table) => {
       table.bigIncrements("id");
       table.string("email").notNullable().unique();
       table.string("cryptedPassword").notNullable();
+      table.string("username").notNullable()
       table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());
       table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now());
     });
