@@ -7,6 +7,7 @@ class ProductSeeder {
         name: "Jeans",
         description: "Standard Denim Jeans",
         price: 49.99,
+        discount: 10,
         quantity: 5,
         availability: true
       }

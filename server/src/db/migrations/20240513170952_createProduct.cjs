@@ -11,7 +11,7 @@ exports.up = async (knex) => {
     table.string("name").notNullable()
     table.text("description")
     table.double("price").notNullable()
-    table.integer("discount")
+    table.integer("discount").defaultTo(0)
     table.integer("quantity").unsigned().notNullable()
     table.boolean("availability").notNullable().defaultTo(false)
     table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now());

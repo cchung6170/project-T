@@ -10,6 +10,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import ProductList from "./ProductList";
+import ProductShow from "./ProductShow";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -28,9 +29,12 @@ const App = (props) => {
 
   return (
     <Router>
-      <TopBar user={currentUser} />
+      <TopBar user={currentUser}/>
       <Switch>
         <Route exact path="/" component={ProductList}/>
+        <Route exact path="/products/:id">
+          <ProductShow user={currentUser}/>
+        </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>

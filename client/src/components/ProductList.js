@@ -4,7 +4,6 @@ import ProductTile from "./ProductTile";
 
 const ProductList = (props) => {
   const [products, setProducts] = useState([])
-  console.log(products)
   const getProducts = async() => {
     try {
       const response = await fetch("/api/v1/products")
@@ -14,7 +13,6 @@ const ProductList = (props) => {
         const parsedData = await response.json()
         setProducts(parsedData.products)
       }
-      console.log(parsedData.products)
     } catch(error) {
       console.error(`Error in fetch: ${error.message}`)
     }
@@ -29,7 +27,7 @@ const ProductList = (props) => {
   })
 
   return (
-    <div>
+    <div >
       <h1>Hello World</h1>
       <div>
         {productsList}

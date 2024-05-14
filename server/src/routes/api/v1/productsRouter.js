@@ -12,6 +12,20 @@ productsRouter.get("/", async (req, res) => {
   }
 })
 
+productsRouter.get("/:id", async (req, res) => {
+  try {
+    let userId
+    if (req.user) {
+      userId = parseInt(req.user.id)
+    }
+    const product = await Product.query().findById(req.params.id)
+    // const serializedSandwich = await SandwichSerializer.summaryForShow(sandwich, userId)
+    res.status(200).json({ product: product })
+  } catch(error) {
+    res.status(500).json({ errors: error })
+  }
+})
+
 
 
 // productsRouter.get("/:id", (req,res) => {
