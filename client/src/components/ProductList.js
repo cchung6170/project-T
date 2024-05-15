@@ -27,7 +27,7 @@ const ProductList = (props) => {
   })
 
   return (
-    <div >
+    <div className="main-background">
       <h1>Hello World</h1>
       <div>
         {productsList}

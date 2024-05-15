@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import ErrorList from "./ErrorList"
 import translateServerError from "../services/translateServerErrors"
+import ReviewTile from "./ReviewTile";
 
 const ProductShow = (props) => {
   const [product, setProduct] = useState({
@@ -49,11 +50,25 @@ const ProductShow = (props) => {
     fixedDiscountPrice = discountedPrice.toFixed(2)
   }  
 
+  // const reviewList = product.reviews.map((review) => {
+  //   return (
+  //     <ReviewTile
+  //       key={review.id}
+  //       review={review}
+  //       user={props.user}
+  //       product={product}
+  //       setProduct={setProduct}
+  //     />
+
+  //   )
+  // })
+
   return (
-    <div>
+    <div className="main-background">
       <h2>{product.name}</h2>
       <h4>{product.description}</h4>
       {fixedDiscountPrice}
+      {/* {reviewList} */}
 
     </div>
   )

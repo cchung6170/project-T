@@ -1,17 +1,22 @@
 const Model = require("./Model.js")
 
-class Product extends Model{
+class Review extends Model{
   static get tableName() {
-    return ""
+    return "reviews"
   }
 
   static get jsonSchema() {
     return {
       type: "object",
-      required: [],
+      required: ["body", "starRating", "productId"],
       properties: {
-        
+        body: {type: "string", minLength: 1},
+        starRating: {type: ["integer", "string"], minimum: 1},
+        // userId: {type: ["integer", "string"]},
+        productId: {type: ["integer", "string"]}
       }
     }
   }
 }
+
+module.exports = Review

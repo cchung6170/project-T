@@ -12,6 +12,7 @@ class ProductSeeder {
         availability: true
       }
     ]
+    
 
     for (const singleProduct of productsData) {
       const currentProduct = await Product.query().findOne(singleProduct)
