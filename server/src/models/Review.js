@@ -17,6 +17,20 @@ class Review extends Model{
       }
     }
   }
+
+  static get relationMappings() {
+    const { User, Product } = require("./index.js")
+    return {
+      user: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: Product,
+        join: {
+          from: "reviews.productId",
+          to: "product.id"
+        }
+      }
+    }
+  }
 }
 
 module.exports = Review

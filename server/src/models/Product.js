@@ -18,6 +18,20 @@ class Product extends Model{
         availability: {type: "boolean"}
       }
     }
+
+  }
+  static get relationMappings() {
+    const { Review, Order } = require("./index.js")
+    return {
+      reviews: {
+        relation: Model.HasManyRelation,
+        modelClass: Review,
+        join: {
+          from: "products.id",
+          to: "reviews.productId"
+        }
+      }
+    }
   }
 }
 
