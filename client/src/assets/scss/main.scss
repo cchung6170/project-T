@@ -1,6 +1,7 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 // place global css here
 *,
 *::before,
@@ -21,3 +22,33 @@
   background-color: #fcf9f0;
 }
 
+.text {
+  font-family: 'Madimi One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #939B7C;
+}
+
+.logo-text {
+  font-family: 'Madimi One', sans-serif;
+  font-weight: 400;
+  font-size: xx-large;
+  font-style: normal;
+  color: #939B7C;
+}
+
+.a:link {
+  color: #939B7C;
+}
+
+.a:active {
+  color: #939B7C;
+}
+
+.a:visited {
+  color: #939B7C;
+}
+
+.a:hover {
+  color: #939B7C;
+}
